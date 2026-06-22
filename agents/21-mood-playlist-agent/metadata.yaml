@@ -1,0 +1,11 @@
+title: moodtunes-ai-playlist-generator
+description: Generates a personalised 10-track playlist from a natural-language mood description using a two-stage multi-agent pipeline, session memory, weather context, and a Streamlit web UI
+author: niravpatidar37
+language: python
+framework: langchain
+tags: [music, playlist, mood-detection, weather-aware, memory, streamlit, groq, llama]
+industry: entertainment
+difficulty: advanced
+llm: llama-3.3-70b-versatile (Groq free tier)
+entrypoint: streamlit_app.py
+requirements: pyproject.toml
