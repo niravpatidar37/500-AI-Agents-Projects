@@ -1,3 +1,7 @@
+# Generated from pyproject.toml — edit pyproject.toml, not this file.
+# Installs the local package in editable mode so mood_playlist_agent is importable.
+-e .
+
 langchain>=0.3.0
 langchain-groq>=0.2.0
 pydantic>=2.0.0
