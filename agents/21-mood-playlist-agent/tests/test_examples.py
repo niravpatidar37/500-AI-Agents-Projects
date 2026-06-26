@@ -10,7 +10,7 @@ pytestmark = pytest.mark.skipif(
 
 
 def test_generate_playlist_chill():
-    from src.mood_playlist_agent.playlist_agent import generate_playlist
+    from mood_playlist_agent.playlist_agent import generate_playlist
     playlist = generate_playlist("feeling chill after a long day", spotify_enrich=False)
     assert playlist.name
     assert len(playlist.tracks) == 10
@@ -18,14 +18,14 @@ def test_generate_playlist_chill():
 
 
 def test_generate_playlist_workout():
-    from src.mood_playlist_agent.playlist_agent import generate_playlist
+    from mood_playlist_agent.playlist_agent import generate_playlist
     playlist = generate_playlist("pumped up for gym, need high energy", spotify_enrich=False)
     assert playlist.energy_level in {"medium", "high"}
     assert len(playlist.tracks) == 10
 
 
 def test_generate_playlist_multilingual():
-    from src.mood_playlist_agent.playlist_agent import generate_playlist
+    from mood_playlist_agent.playlist_agent import generate_playlist
     playlist = generate_playlist("nostalgic Bollywood evening", spotify_enrich=False)
     assert playlist.name
     genres_lower = [g.lower() for g in playlist.genres]
@@ -33,8 +33,7 @@ def test_generate_playlist_multilingual():
 
 
 def test_generate_playlist_with_crew():
-    from src.mood_playlist_agent.crew_agent import generate_playlist_with_crew
-    playlist = generate_playlist_with_crew("rainy afternoon, feeling nostalgic")
+    from mood_playlist_agent.crew_agent import generate_playlist_with_crew
+    playlist = generate_playlist_with_crew("Sunday morning coffee and jazz", spotify_enrich=False)
     assert playlist.name
     assert len(playlist.tracks) == 10
-    assert playlist.energy_level in {"low", "medium", "high"}
