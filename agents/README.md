@@ -35,7 +35,7 @@ python agent.py
 | 18 | [Job Application Agent](18-job-application-agent/) | CrewAI | GPT-4o | HR | ⭐⭐ |
 | 19 | [Competitive Analysis Agent](19-competitive-analysis-agent/) | LangGraph | GPT-4o | Business | ⭐⭐⭐ |
 | 20 | [Multi-Agent Debate System](20-multi-agent-debate/) | LangChain | GPT-4o | Research | ⭐⭐⭐ |
-| 21 | [MoodTunes — AI Playlist Generator](21-mood-playlist-agent/) | LangChain | Groq Llama 3.3 (free) | Entertainment | ⭐⭐⭐ |
+| 21 | [VibeForge — AI Playlist Generator](21-mood-playlist-agent/) | LangChain | Groq Llama 3.3 (free) | Entertainment | ⭐⭐⭐ |
 
 ## Adding Your Agent
 

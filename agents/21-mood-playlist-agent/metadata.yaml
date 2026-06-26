@@ -1,4 +1,4 @@
-title: moodtunes-ai-playlist-generator
+title: vibeforge-ai-playlist-generator
 description: Generates a personalised 10-track playlist from a natural-language mood description using a two-stage multi-agent pipeline, session memory, weather context, and a Streamlit web UI
 author: niravpatidar37
 language: python
