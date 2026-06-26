@@ -35,7 +35,11 @@ def _load() -> dict:
 
 
 def _save(data: dict) -> None:
-    _memory_file().write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    path = _memory_file()
+    tmp = path.with_suffix(path.suffix + ".tmp")
+
+    tmp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(path)
 
 
 def get_preference_context() -> str:
