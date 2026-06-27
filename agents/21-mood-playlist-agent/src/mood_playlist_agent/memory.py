@@ -37,7 +37,6 @@ def _load() -> dict:
 def _save(data: dict) -> None:
     path = _memory_file()
     tmp = path.with_suffix(path.suffix + ".tmp")
-
     tmp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     tmp.replace(path)
 
@@ -72,7 +71,10 @@ def get_preference_context() -> str:
     track_counts: dict[str, int] = {}
     for s in sessions:
         for t in s.get("tracks", []):
-            key = f"{t['title']} by {t['artist']}"
+            title, artist = t.get("title"), t.get("artist")
+            if not title or not artist:
+                continue
+            key = f"{title} by {artist}"
             track_counts[key] = track_counts.get(key, 0) + 1
 
     session_favorites = [
@@ -84,7 +86,10 @@ def get_preference_context() -> str:
     recently_heard: set[str] = set()
     for s in sessions[-2:]:
         for t in s.get("tracks", []):
-            key = f"{t['title']} by {t['artist']}"
+            title, artist = t.get("title"), t.get("artist")
+            if not title or not artist:
+                continue
+            key = f"{title} by {artist}"
             if key not in session_favorites and key not in loved_tracks:
                 recently_heard.add(key)
 
